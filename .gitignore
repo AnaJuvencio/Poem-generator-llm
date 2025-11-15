@@ -1,0 +1,33 @@
+# Arquivos e dados gerados pelo sistema
+*.pyc
+__pycache__/
+.pytest_cache/
+.coverage
+
+# Dados sensíveis
+grupo1_modelo/api_keys.py
+*.env
+.env
+
+# Dados de sessão (manter no repositório como exemplo)
+data/example_*
+# Mas excluir dados reais de produção
+data/session_*.json
+data/feedback_history.json
+data/prompt_history.json
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
