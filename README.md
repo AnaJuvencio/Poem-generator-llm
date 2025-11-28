@@ -1,125 +1,145 @@
-# 🎭 Gerador de Poemas com IA e Feedback
+# Gerador de Poemas com IA e Feedback
 
-Sistema educacional que gera poemas usando IA, permite feedback do usuário e refina automaticamente os prompts.
+Sistema completo de geração de poemas usando IA com interface Gradio moderna e sistema avançado de feedback inteligente.
 
-## 📁 Estrutura
+## Estrutura Atualizada
 
 ```
-gerador-de-poema/
-├── sistema_gerador_poemas.ipynb    ⭐ NOTEBOOK PRINCIPAL
-├── docs/                           (documentação)
+Poem-generator-llm/
+├── notebooks/
+│   └── sistema_gerador_poemas.ipynb    
+├── docs/                               
 ├── requirements.txt
 └── README.md
 ```
 
-## 🚀 Quick Start
+## Sistema Integrado Completo
 
-```bash
-# 1. Instalar
-pip install -r requirements.txt
+**Arquivo Principal:** `notebooks/sistema_gerador_poemas.ipynb`
 
-# 2. Configurar API (opcional - funciona com demo)
-$env:LLM_API_KEY = "sua_chave"
+### Funcionalidades Implementadas:
 
-# 3. Executar
-jupyter notebook notebooks/sistema_gerador_poemas.ipynb
-```
+**Grupo 1 - Integração com IA**
+- API Google Gemini 2.5 Pro integrada
+- Geração de poemas personalizados
+- Controle de criatividade e temperatura
+- Sistema de chat contínuo vs novo chat
 
-## 📚 O Notebook tem 9 Seções
+**Grupo 2 - Interface Moderna** 
+- Interface Gradio responsiva e elegante
+- Coleta estruturada de refinamentos
+- Sistema de abas intuitivo
+- CSS personalizado e UX otimizada
 
-1. Título e Objetivos
-2. Imports e Configuração
-3. Modelo de Conversação (teoria)
-4-5. Funções de IA (Grupo 1)
-6. Feedback e Refinamento (Grupo 3)
-7. Interface (Grupo 2)
-8. Execuções Comentadas (Todos)
-9. Notas para Relatório (Todos)
+**Grupo 3 - Sistema Avançado de Feedback**
+- **7 funções especializadas** implementadas:
+  1. `validar_refinamento()` - Validação inteligente
+  2. `detectar_conflitos()` - Detecção automática de conflitos
+  3. `priorizar_refinamentos()` - Ordem otimizada (Remover → Editar → Adicionar)
+  4. `gerar_prompt_refinamento()` - Templates especializados
+  5. `avaliar_refinamento()` - Avaliação automática de resultados
+  6. `sugerir_refinamentos()` - Sugestões inteligentes
+  7. `processar_refinamentos()` - Pipeline completo integrado
 
-## 📖 Documentação
-
-Veja a pasta `docs/` para:
-- `INICIO_AQUI.md` - Guia completo de início
-- `README_EXECUCOES.md` - Como documentar as execuções
-- `TEMPLATE_RELATORIO.md` - Template do relatório
-- `STATUS_FINAL.txt` - Checklist para entrega
-
-## ✨ Funcionalidades
-
-✅ Geração de poemas com IA  
-✅ Novo Chat vs Chat Contínuo  
-✅ Feedback e refinamento automático  
-✅ Interface interativa (widgets)  
-✅ Modo demo (sem API real)
-- **Responsabilidades**:
-  - Pesquisar e testar modelos gratuitos (OpenAI, HuggingFace, Cohere)
-  - Implementar função `generate_poem(prompt, tipo) -> dict`
-  - Configurar parâmetros ideais para cada tipo de poema
-  - Sistema de fallback entre modelos
-
-### Grupo 2: Interface do Usuário  
-- **Arquivos**: `grupo2_interface/*.py`
-- **Responsabilidades**:
-  - Criar widgets interativos com ipywidgets
-  - Implementar entrada de prompts e seleção de tipos
-  - Exibir poemas de forma elegante
-  - Coletar feedback do usuário (rating + comentários)
-  - Controlar fluxo de interação
-
-### Grupo 3: Sistema de Feedback
-- **Arquivos**: `grupo3_feedback/*.py`  
-- **Responsabilidades**:
-  - Coletar e estruturar feedback
-  - Analisar padrões nos comentários
-  - Implementar algoritmos de melhoria de prompts
-  - Manter histórico de evoluções
-  - Métricas de qualidade
-
-## 🔗 Como os Grupos se Integram
+## Fluxo de Integração Otimizado
 
 ```
-[Interface do Usuário] 
-        ↓ prompt
-[Grupo 1: Gerar Poema] 
-        ↓ poema
-[Interface: Mostrar + Coletar Feedback]
-        ↓ feedback
-[Grupo 3: Analisar e Melhorar Prompt]
-        ↓ prompt melhorado
-[Grupo 1: Gerar Novo Poema] → ciclo continua
+[Usuário insere tema e configurações]
+        ↓
+[Sistema gera poema via Gemini API]
+        ↓
+[Interface exibe resultado + opções de refinamento]
+        ↓ (se refinamentos solicitados)
+[Sistema Avançado do Grupo 3]:
+  • Valida refinamentos
+  • Detecta conflitos
+  • Prioriza ordem (Remover → Editar → Adicionar)
+  • Gera prompts especializados
+  • Aplica refinamentos
+  • Avalia resultados
+        ↓
+[Poema refinado apresentado ao usuário]
 ```
 
-**Arquivo Principal de Integração**: `notebooks/main_notebook.ipynb`
-- Importa funções de todos os grupos
-- Orquestra o fluxo completo
-- Mantém estado da sessão
-- Interface unificada
+## Tecnologias Utilizadas
 
-## 📦 Dependências Principais
+- **Frontend**: Gradio 5.40.0 (interface web moderna)
+- **IA**: Google Gemini 2.5 Pro API
+- **Backend**: Python com processamento inteligente
+- **Análise**: difflib, collections.Counter para métricas
+- **Ambiente**: Jupyter Notebooks
 
-- `jupyter` / `ipywidgets` - Interface interativa
-- `requests` - Chamadas para APIs
-- `pandas` - Manipulação de dados de feedback  
-- `json` - Armazenamento de históricos
-- `openai` / `transformers` - APIs de IA (conforme modelo escolhido)
+## Documentação Completa
 
-## 📁 Dados Gerados
+Consulte a pasta `docs/` para:
+- `TEMPLATE_RELATORIO.md` - Template para relatório final
+- `README_EXECUCOES.md` - Como documentar execuções
+- `SUMARIO_VISUAL.txt` - Visão geral completa do projeto
 
-- `data/feedback_history.json` - Histórico de todos os feedbacks
-- `data/prompt_history.json` - Evolução dos prompts
-- `data/model_comparison.csv` - Comparação de modelos testados
-- `data/session_data.json` - Dados da sessão atual
+## Como Usar o Sistema
 
-## 🎯 Entregáveis
+### **Geração Básica:**
+1. Execute o notebook `sistema_gerador_poemas.ipynb`
+2. Digite um tema na interface Gradio
+3. Configure estilo, tamanho e criatividade
+4. Clique "Gerar Poema"
 
-1. **Sistema Funcional**: Notebook executável no Kaggle
-2. **Execuções Comentadas**: 10+ exemplos com análises detalhadas
-3. **Relatório Técnico**: Documentação completa em `docs/`
-4. **Código Limpo**: Comentado e estruturado para fácil manutenção
+### **Refinamentos Avançados:**
+1. Após gerar um poema, clique "Adicionar Refinamentos"
+2. Para cada refinamento:
+   - **Ação**: Adicionar, Editar ou Remover
+   - **Alvo**: Especifique a parte (ex: "primeira estrofe")
+   - **Novo Conteúdo**: Texto de substituição
+3. Clique "Aplicar Refinamentos"
+4. O sistema automaticamente:
+   - Valida se o alvo existe
+   - Detecta conflitos entre refinamentos
+   - Aplica na ordem otimizada
+   - Avalia se funcionou corretamente
 
-## 🏃‍♂️ Próximos Passos
+## Dependências
 
-1. **Semana 1**: Cada grupo implementa seus módulos básicos
-2. **Semana 2**: Integração inicial no notebook principal  
-3. **Semana 3**: Testes, refinamento e documentação
-4. **Entrega**: Sistema completo funcionando + relatório
+Ver `requirements.txt` para lista completa:
+- `gradio==5.40.0` - Interface web moderna
+- `google-genai` - API Google Gemini
+- `difflib` - Análise de diferenças para avaliação
+- `collections` - Contadores para análise de texto
+
+## Características Avançadas
+
+### **Sistema de Validação Inteligente**
+- Verifica se alvos de refinamento existem no poema
+- Detecta refinamentos contraditórios automaticamente
+- Sugere resoluções para conflitos encontrados
+
+### **Templates Especializados**
+- Prompts otimizados para cada tipo de refinamento
+- Instruções específicas para preservar estilo original
+- Máxima efetividade na aplicação de mudanças
+
+### **Avaliação Automática**
+- Métricas de sucesso por tipo de operação
+- Análise de diferenças antes/depois
+- Feedback em tempo real sobre efetividade
+
+### **Interface Responsiva**
+- Design moderno com CSS personalizado
+- Sistema de abas intuitivo
+- Estados visuais claros para cada etapa
+
+## 🎯 Status do Projeto
+
+✅ **SISTEMA COMPLETO E FUNCIONAL**
+- ✅ Integração API Gemini configurada
+- ✅ Interface Gradio moderna implementada
+- ✅ Sistema avançado de feedback (7 funções)
+- ✅ Pipeline completo de refinamentos
+- ✅ Validação e detecção de conflitos
+- ✅ Templates especializados por tipo
+- ✅ Avaliação automática de resultados
+- ✅ Documentação completa
+
+
+**Desenvolvido por:** Grupos 1, 2 e 3  
+**Tecnologia Principal:** Google Gemini 2.5 Pro + Gradio  
+**Status:** Pronto para uso e demonstração
