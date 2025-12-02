@@ -4,30 +4,88 @@ __pycache__/
 .pytest_cache/
 .coverage
 
-# Dados sensíveis
+# ⚠️ DADOS SENSÍVEIS - NUNCA FAZER COMMIT ⚠️
+# Chaves de API e credenciais
+*.key
+*api_key*
+*API_KEY*
+*secret*
+*SECRET*
+*token*
+*TOKEN*
+*.pem
+*.p12
+*.pfx
+*.cer
+*.crt
+*credentials*
+*config.json
 grupo1_modelo/api_keys.py
+
+# Arquivos de ambiente
 *.env
 .env
+.env.*
+config.ini
+settings.ini
 
-# Dados de sessão (manter no repositório como exemplo)
+# Jupyter Notebooks com outputs (podem conter dados sensíveis)
+# Descomente a linha abaixo se quiser ignorar outputs completamente:
+# *.ipynb
+
+# Dados de sessão e histórico (podem conter informações pessoais)
 data/example_*
-# Mas excluir dados reais de produção
+# Excluir dados reais de produção
 data/session_*.json
 data/feedback_history.json
 data/prompt_history.json
+data/user_data.json
+data/chat_history.json
 
 # Jupyter Notebooks checkpoints
 .ipynb_checkpoints/
 
-# IDEs
+# IDEs e editores
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
 
-# OS
+# Sistemas Operacionais
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Logs
+# Logs e debug
 *.log
+debug.txt
+error.log
+access.log
+
+# Temporários
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+
+# Cache de Python
+*.pyc
+__pycache__/
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
