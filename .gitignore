@@ -4,10 +4,23 @@ __pycache__/
 .pytest_cache/
 .coverage
 
-# Dados sensíveis
+# Dados sensíveis - API Keys e Credenciais
 grupo1_modelo/api_keys.py
 *.env
 .env
+.env.local
+.env.*.local
+**/api_key.txt
+**/api_keys.txt
+**/*_key.txt
+**/*_keys.txt
+config/secrets.py
+config/credentials.py
+secrets.json
+credentials.json
+
+# Notebooks com chaves (criar versões _template.ipynb sem chaves)
+# notebooks/*_with_key.ipynb
 
 # Dados de sessão (manter no repositório como exemplo)
 data/example_*
